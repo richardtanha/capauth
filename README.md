@@ -23,3 +23,12 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+
+## CAP Authentication / Authorization Notes (Local testing)
+- npm install --save passport
+- use '.cdsrc.json' for local users testing (.cdsrc.json lets you store project information like package.json https://cap.cloud.sap/docs/node.js/cds-env#project-settings)
+- add "@(requires: 'authenticated-user')" to CDS service definition to require user authentication
+- add @(restrict : [{ grant:<events>, to:<roles>, where:<filter-condition> }]) to applicable entities where needed
+- add necessary filtering to event handlers based on user restrictions where necessary
+
+Learn more at https://cap.cloud.sap/docs/guides/authorization#requires
