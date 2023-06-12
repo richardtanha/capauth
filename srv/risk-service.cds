@@ -1,5 +1,10 @@
 using { riskmanagement as rm } from '../db/schema';
  @path: 'service/risk'
+
+// service RiskService @(requires: 'authenticated-user'){
+//     entity Risks as projection on rm.Risks;
+//     entity Mitigations as projection on rm.Mitigations;
+
  service RiskService @(requires: 'authenticated-user'){
  entity Risks @(restrict : [
             {
@@ -15,7 +20,7 @@ using { riskmanagement as rm } from '../db/schema';
   entity Mitigations @(restrict : [
             {
                 grant : [ 'READ' ],
-                to : [ 'RiskManager' ]
+                to : [ 'RiskViewer' ]
             },
             {
                 grant : [ '*' ],
