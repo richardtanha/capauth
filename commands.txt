@@ -1,0 +1,3 @@
+rm cpapp.db
+cds deploy --to sqlite:cpapp.db
+cds watch
