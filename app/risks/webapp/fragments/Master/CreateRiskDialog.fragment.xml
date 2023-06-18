@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Dialog id="createRiskDialog" title="Create Risk">
+        <layout:VerticalLayout class="sapUiSmallMargin" >
+            <VBox class="sapUiSmallMargin">
+                <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                    <f:content>
+                        <Label text="Title" required="true"/>
+                        <Input id="riskTitleInput" value="{risksModel>/riskTitle}" change=".onRiskTitleChange"/>
+                        <Label text="Description" required="true"/>
+                        <Input id="riskDescriptionInput" value="{risksModel>/riskDescription}" change=".onRiskDescriptionChange"/>
+                    </f:content>
+                </f:SimpleForm>
+            </VBox>
+        </layout:VerticalLayout>
+        <beginButton>
+			<Button text="Create" press=".onCreateRisk"/>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press=".onCloseRiskDialog(false)"/>
+		</endButton>
+    </Dialog>
+</core:FragmentDefinition>

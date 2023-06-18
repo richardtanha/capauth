@@ -1,0 +1,24 @@
+<mvc:View controllerName="ns.risks.controller.Master"
+    xmlns="sap.m" xmlns:f="sap.f" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fb="sap.ui.comp.filterbar" xmlns:core="sap.ui.core" xmlns:smartField="sap.ui.comp.smartfield" displayBlock="true">
+    <!-- <Page id="page" title="{i18n>title}">
+        <content />
+    </Page> -->
+    <f:DynamicPage id="dynamicMasterPageId" headerExpanded="true" toggleHeaderOnTitleClick="true" busy="{viewModel>/busy}" class="sapUiSizeCompact">
+        <!-- DynamicPage Title -->
+		<!-- <f:title>
+			<f:DynamicPageTitle id="_IDGenDynamicPageTitle1">
+				<f:heading>
+					<HBox id="_IDGenHBox1" alignItems="Center">
+						<Title id="_IDGenTitle1" text="" />
+					</HBox>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title> -->
+		
+        <!-- DynamicPage Content -->
+		<f:content>
+			<core:Fragment fragmentName="ns.risks/fragments/Master/Table" type="XML"/>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>
